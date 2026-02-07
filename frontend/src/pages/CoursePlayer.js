@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import styled from 'styled-components';
 import axios from 'axios';
+import config from '../config';
 import {
     FaChevronLeft,
     FaCheckCircle,
@@ -254,8 +255,8 @@ function CoursePlayer() {
         try {
             setLoading(true);
             const [courseRes, enrollRes] = await Promise.all([
-                axios.get(`http://localhost:5000/api/courses/${courseId}`),
-                axios.get(`http://localhost:5000/api/courses/${courseId}/enrollment/${user.id}`)
+                axios.get(`${config.API_BASE_URL}/api/courses/${courseId}`),
+                axios.get(`${config.API_BASE_URL}/api/courses/${courseId}/enrollment/${user.id}`)
             ]);
 
             setCourse(courseRes.data);
@@ -304,7 +305,7 @@ function CoursePlayer() {
 
     const handleLessonToggle = async (lessonId, isCompleted) => {
         try {
-            const res = await axios.post(`http://localhost:5000/api/courses/${courseId}/progress`, {
+            const res = await axios.post(`${config.API_BASE_URL}/api/courses/${courseId}/progress`, {
                 userId: user.id,
                 lessonId,
                 isCompleted

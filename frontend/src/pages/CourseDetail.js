@@ -3,6 +3,7 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import styled from 'styled-components';
 import axios from 'axios';
+import config from '../config';
 import {
   FaStar,
   FaUserFriends,
@@ -384,7 +385,7 @@ function CourseDetail() {
     // Try to get from API, fallback to sample
     const fetch = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/courses/${id}`);
+        const res = await axios.get(`${config.API_BASE_URL}/api/courses/${id}`);
         setCourse(res.data);
       } catch (e) {
         if (sampleCourses[id]) {

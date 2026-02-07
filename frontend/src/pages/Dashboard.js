@@ -410,7 +410,7 @@ function Dashboard() {
   const fetchEnrollments = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`http://localhost:5000/api/courses/user/${user.id}/enrollments`);
+      const response = await axios.get(`${config.API_BASE_URL}/api/courses/user/${user.id}/enrollments`);
       setEnrollments(response.data);
 
       // Calculate stats
