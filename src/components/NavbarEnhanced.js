@@ -34,6 +34,13 @@ const NavContainer = styled(motion.nav)`
   z-index: 1000;
   border-bottom: 1px solid ${props => props.theme.colors.border};
 
+  .mobile-only-flex {
+    display: none;
+    @media (max-width: 1024px) {
+      display: flex;
+    }
+  }
+
   @media (max-width: 768px) {
     padding: 0.8rem 1rem;
   }
@@ -258,8 +265,10 @@ const ThemeToggle = styled(motion.button)`
   transition: all 0.3s ease;
 
   @media (max-width: 1024px) {
-    margin-left: auto;
-    margin-right: 1rem;
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+    margin-right: 0.5rem;
   }
 `;
 
@@ -385,15 +394,13 @@ function NavbarEnhanced() {
         </NavSection>
 
         {/* Mobile Controls */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          <div className="mobile-only" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <ThemeToggle onClick={toggleTheme} style={{ display: window.innerWidth <= 1024 ? 'flex' : 'none' }}>
-              {isDarkMode ? <FaSun /> : <FaMoon />}
-            </ThemeToggle>
-            <MobileMenuBtn onClick={() => setIsOpen(!isOpen)}>
-              {isOpen ? <FaTimes /> : <FaBars />}
-            </MobileMenuBtn>
-          </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.2rem' }}>
+          <ThemeToggle onClick={toggleTheme} className="mobile-only-flex">
+            {isDarkMode ? <FaSun /> : <FaMoon />}
+          </ThemeToggle>
+          <MobileMenuBtn onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? <FaTimes /> : <FaBars />}
+          </MobileMenuBtn>
         </div>
 
         {/* Mobile Menu Overlay */}

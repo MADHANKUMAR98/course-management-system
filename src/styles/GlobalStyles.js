@@ -26,6 +26,8 @@ export const GlobalStyles = createGlobalStyle`
     transition: background 0.3s ease, color 0.3s ease;
     -webkit-tap-highlight-color: transparent;
     font-size: 16px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 
     @media (max-width: 768px) {
       font-size: 14px;

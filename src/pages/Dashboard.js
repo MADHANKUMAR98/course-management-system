@@ -31,7 +31,7 @@ const DashboardContainer = styled(motion.div)`
 `;
 
 const WelcomeSection = styled.div`
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, ${props => props.theme.colors.primary} 0%, ${props => props.theme.colors.secondary} 100%);
   border-radius: 20px;
   padding: 3rem;
   color: white;
@@ -40,6 +40,11 @@ const WelcomeSection = styled.div`
   position: relative;
   overflow: hidden;
 
+  @media (max-width: 768px) {
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+  }
+
   &::before {
     content: '';
     position: absolute;
@@ -47,7 +52,7 @@ const WelcomeSection = styled.div`
     right: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
     background-size: 30px 30px;
     animation: float 20s linear infinite;
   }
@@ -128,30 +133,6 @@ const StatLabel = styled.div`
   font-size: 1rem;
 `;
 
-const Badge = styled.div`
-  background: ${props => {
-    switch (props.level) {
-      case 'Beginner': return 'rgba(46, 213, 115, 0.1)';
-      case 'Intermediate': return 'rgba(255, 165, 0, 0.1)';
-      case 'Advanced': return 'rgba(255, 71, 87, 0.1)';
-      default: return 'rgba(102, 126, 234, 0.1)';
-    }
-  }};
-  color: ${props => {
-    switch (props.level) {
-      case 'Beginner': return '#2ed573';
-      case 'Intermediate': return '#ffa502';
-      case 'Advanced': return '#ff4757';
-      default: return '#667eea';
-    }
-  }};
-  padding: 0.3rem 1rem;
-  border-radius: 15px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  white-space: nowrap;
-`;
-
 const Section = styled.div`
   background: ${props => props.theme.colors.surface};
   backdrop-filter: blur(10px);
@@ -160,6 +141,11 @@ const Section = styled.div`
   margin-bottom: 2rem;
   box-shadow: ${props => props.theme.shadows.lg};
   border: 1px solid ${props => props.theme.colors.border};
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+    border-radius: 15px;
+  }
 `;
 
 const SectionHeader = styled.div`
@@ -185,20 +171,24 @@ const SectionTitle = styled.h2`
   svg {
     color: ${props => props.theme.colors.primary};
   }
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const ViewAllButton = styled(Link)`
   padding: 0.8rem 1.5rem;
   background: transparent;
-  border: 2px solid #667eea;
-  color: #667eea;
+  border: 2px solid ${props => props.theme.colors.primary};
+  color: ${props => props.theme.colors.primary};
   border-radius: 50px;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
 
   &:hover {
-    background: #667eea;
+    background: ${props => props.theme.colors.primary};
     color: white;
     transform: translateY(-2px);
   }
@@ -220,7 +210,7 @@ const CourseCard = styled(motion.div)`
   overflow: hidden;
 
   &:hover {
-    border-color: #667eea;
+    border-color: ${props => props.theme.colors.primary};
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
   }
@@ -235,9 +225,19 @@ const CourseHeader = styled.div`
 
 const CourseTitle = styled.h3`
   font-size: 1.2rem;
-  color: #333;
+  color: ${props => props.theme.colors.text};
   margin-bottom: 0.5rem;
   flex: 1;
+`;
+
+const Badge = styled.div`
+  background: ${props => props.level === 'Beginner' ? 'rgba(46, 213, 115, 0.1)' : props.level === 'Intermediate' ? 'rgba(255, 165, 0, 0.1)' : 'rgba(255, 71, 87, 0.1)'};
+  color: ${props => props.level === 'Beginner' ? '#2ed573' : props.level === 'Intermediate' ? '#ffa502' : '#ff4757'};
+  padding: 0.3rem 1rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
 `;
 
 const ProgressBar = styled.div`
@@ -250,7 +250,7 @@ const ProgressBar = styled.div`
 
 const ProgressFill = styled.div`
   height: 100%;
-  background: linear-gradient(90deg, #667eea, #764ba2);
+  background: ${props => props.theme.gradients.primary};
   border-radius: 4px;
   width: ${props => props.progress || 0}%;
   transition: width 0.5s ease;
@@ -260,7 +260,7 @@ const ProgressText = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #666;
+  color: ${props => props.theme.colors.textSecondary};
   font-size: 0.9rem;
   margin-top: 0.5rem;
 `;
@@ -268,7 +268,7 @@ const ProgressText = styled.div`
 const CourseAction = styled(Link)`
   display: inline-block;
   padding: 0.8rem 1.5rem;
-  background: #667eea;
+  background: ${props => props.theme.colors.primary};
   color: white;
   border-radius: 50px;
   text-decoration: none;
@@ -278,7 +278,7 @@ const CourseAction = styled(Link)`
   margin-top: 1rem;
 
   &:hover {
-    background: #764ba2;
+    background: ${props => props.theme.colors.secondary};
     transform: translateY(-2px);
   }
 `;
@@ -294,9 +294,9 @@ const ActivityItem = styled(motion.div)`
   align-items: center;
   gap: 1rem;
   padding: 1rem;
-  background: rgba(102, 126, 234, 0.05);
+  background: ${props => props.theme.colors.background};
   border-radius: 10px;
-  border-left: 4px solid #667eea;
+  border-left: 4px solid ${props => props.theme.colors.primary};
 `;
 
 const ActivityIcon = styled.div`
@@ -307,7 +307,7 @@ const ActivityIcon = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #667eea;
+  color: ${props => props.theme.colors.primary};
 `;
 
 const ActivityContent = styled.div`
@@ -316,12 +316,12 @@ const ActivityContent = styled.div`
 
 const ActivityTitle = styled.div`
   font-weight: 600;
-  color: #333;
+  color: ${props => props.theme.colors.text};
 `;
 
 const ActivityTime = styled.div`
   font-size: 0.85rem;
-  color: #666;
+  color: ${props => props.theme.colors.textSecondary};
   margin-top: 0.3rem;
 `;
 
@@ -330,26 +330,26 @@ const AchievementBadge = styled.div`
   align-items: center;
   gap: 1rem;
   padding: 1rem;
-  background: linear-gradient(135deg, rgba(255, 165, 0, 0.1), rgba(255, 69, 0, 0.1));
+  background: ${props => props.theme.colors.background};
   border-radius: 10px;
-  border: 2px solid rgba(255, 165, 0, 0.3);
+  border: 1px solid ${props => props.theme.colors.border};
 `;
 
 const EmptyState = styled.div`
   text-align: center;
   padding: 3rem;
-  color: #666;
+  color: ${props => props.theme.colors.textSecondary};
 
   svg {
     font-size: 3rem;
     margin-bottom: 1rem;
-    color: #667eea;
+    color: ${props => props.theme.colors.primary};
     opacity: 0.5;
   }
 
   h3 {
     margin-bottom: 0.5rem;
-    color: #333;
+    color: ${props => props.theme.colors.text};
   }
 `;
 
@@ -413,20 +413,18 @@ function Dashboard() {
       const response = await axios.get(`${config.API_BASE_URL}/api/courses/user/${user.id}/enrollments`);
       setEnrollments(response.data);
 
-      // Calculate stats
       const enrolled = response.data.length;
       const completed = response.data.filter(e => e.completed).length;
-      const totalProgress = response.data.reduce((sum, e) => sum + (e.progress || 0), 0) / enrolled || 0;
+      const totalProgress = enrolled > 0 ? response.data.reduce((sum, e) => sum + (e.progress || 0), 0) / enrolled : 0;
 
       setStats({
         enrolledCourses: enrolled,
         completedCourses: completed,
         totalProgress: Math.round(totalProgress),
-        studyHours: enrolled * 10 // Estimated
+        studyHours: enrolled * 10
       });
     } catch (error) {
       console.error('Error fetching enrollments:', error);
-      // Sample data for demo
       const sampleEnrollments = [
         {
           id: '1',
@@ -604,7 +602,7 @@ function Dashboard() {
                 <CourseHeader>
                   <div>
                     <CourseTitle>{enrollment.courseTitle}</CourseTitle>
-                    <p style={{ color: '#666', fontSize: '0.9rem' }}>
+                    <p style={{ color: theme.colors.textSecondary, fontSize: '0.9rem' }}>
                       Enrolled: {new Date(enrollment.enrolledAt).toLocaleDateString()}
                     </p>
                   </div>
@@ -624,13 +622,9 @@ function Dashboard() {
 
                 <CourseAction to={`/courses/${enrollment.courseId}/learn`}>
                   {enrollment.progress === 100 ? (
-                    <>
-                      <FaCertificate /> View Certificate
-                    </>
+                    <><FaCertificate /> View Certificate</>
                   ) : (
-                    <>
-                      <FaPlayCircle /> Continue Learning
-                    </>
+                    <><FaPlayCircle /> Continue Learning</>
                   )}
                 </CourseAction>
               </CourseCard>
@@ -699,10 +693,10 @@ function Dashboard() {
                 {achievement.icon}
               </div>
               <div>
-                <div style={{ fontWeight: '600', color: '#333' }}>
+                <div style={{ fontWeight: '600', color: theme.colors.text }}>
                   {achievement.title}
                 </div>
-                <div style={{ color: '#666', fontSize: '0.9rem' }}>
+                <div style={{ color: theme.colors.textSecondary, fontSize: '0.9rem' }}>
                   {achievement.description}
                 </div>
               </div>

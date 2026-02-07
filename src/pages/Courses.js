@@ -110,6 +110,12 @@ const ControlsRow = styled.div`
   align-items: center;
   gap: 2rem;
   flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
 `;
 
 const Filters = styled.div`
