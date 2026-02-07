@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1770398115201",
+    "name": "madhan kumar",
+    "email": "madhanananthan.03@gmail.com",
+    "password": "$2a$10$0A1l8scUQCl3RUzmX6ijb.vjuAFu6Bw.mDDSD/OyBM2lo01ykyQqG",
+    "role": "student",
+    "createdAt": "2026-02-06T17:15:15.201Z"
+  },
+  {
+    "id": "1",
+    "name": "Admin User",
+    "email": "admin@example.com",
+    "password": "$2a$10$8z42vu3IGjOWgFDYxpjJTesKWz7aikceQWkAWIeChXMoJ86Y40BBi",
+    "role": "admin",
+    "createdAt": "2026-02-06T18:08:18.251Z"
+  },
+  {
+    "id": "1770401755014",
+    "name": "madhan kumar",
+    "email": "madhanananthan.02@gmail.com",
+    "password": "$2a$10$igWEkYTUp2UHxBl9zPvwz.V80juG2/NJ/iSQYuBLiWDvyOUss6OQq",
+    "role": "student",
+    "createdAt": "2026-02-06T18:15:55.014Z"
+  },
+  {
+    "id": "1770402727521",
+    "name": "madhan kumar",
+    "email": "madhanananth.03@gmail.com",
+    "password": "$2a$10$RpBuC0MrSDnumrqXNH847uddtEQVkfFdXV7AbckMc1TJZnMrdT9sq",
+    "role": "student",
+    "createdAt": "2026-02-06T18:32:07.521Z"
+  }
+]

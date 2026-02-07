@@ -1,0 +1,157 @@
+[
+  {
+    "id": "1",
+    "title": "Full Stack Web Development",
+    "description": "Learn to build modern web applications with React and Node.js",
+    "instructor": "John Doe",
+    "price": 49.99,
+    "category": "Web Development",
+    "rating": 4.7,
+    "students": 1250,
+    "duration": "40 hours",
+    "level": "Intermediate",
+    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=225&fit=crop",
+    "modules": [
+      {
+        "id": "m1",
+        "title": "Introduction to Web Development",
+        "lessons": [
+          {
+            "id": "l1",
+            "title": "Welcome to the Course",
+            "type": "video",
+            "duration": "5:00",
+            "content": "Welcome! In this course, you will learn everything from HTML to advanced React and Node.js. Get ready for an exciting journey."
+          },
+          {
+            "id": "l2",
+            "title": "How the Web Works",
+            "type": "reading",
+            "duration": "10:00",
+            "content": "The web works by using the Client-Server model. Your browser acts as the client, sending requests to servers which then send back resources."
+          },
+          {
+            "id": "l3",
+            "title": "Setting up your Dev Environment",
+            "type": "video",
+            "duration": "15:00",
+            "content": "Install VS Code, Node.js, and Git. These are the essential tools for any modern web developer."
+          },
+          {
+            "id": "q1",
+            "title": "Module 1 Knowledge Check",
+            "type": "quiz",
+            "duration": "10:00",
+            "questions": [
+              {
+                "id": "q1_1",
+                "question": "What is the primary role of a web browser?",
+                "options": [
+                  "To store website databases",
+                  "To act as a client and render HTML resources",
+                  "To compile server-side code",
+                  "To provide internet connectivity"
+                ],
+                "correct": 1
+              },
+              {
+                "id": "q1_2",
+                "question": "Which tool is NOT part of the essential dev environment mentioned?",
+                "options": [
+                  "VS Code",
+                  "Node.js",
+                  "Git",
+                  "Docker"
+                ],
+                "correct": 3
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "m2",
+        "title": "React Fundamentals",
+        "lessons": [
+          {
+            "id": "l4",
+            "title": "Introduction to React",
+            "type": "video",
+            "duration": "12:00",
+            "content": "React is a JavaScript library for building user interfaces. It's component-based and uses a Virtual DOM for efficiency."
+          },
+          {
+            "id": "l5",
+            "title": "JSX and Components",
+            "type": "reading",
+            "duration": "15:00",
+            "content": "JSX allows us to write HTML-like code in JavaScript. Components are the building blocks of a React application."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Data Science Masterclass",
+    "description": "Complete guide to data science with Python and ML",
+    "instructor": "Jane Smith",
+    "price": 59.99,
+    "category": "Data Science",
+    "rating": 4.8,
+    "students": 893,
+    "duration": "50 hours",
+    "level": "Advanced",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=225&fit=crop",
+    "modules": [
+      {
+        "id": "d1",
+        "title": "Python for Data Science",
+        "lessons": [
+          {
+            "id": "dl1",
+            "title": "Numpy Basics",
+            "type": "video",
+            "duration": "20:00",
+            "content": "Numpy is the fundamental package for scientific computing in Python. Learn how to handle large, multi-dimensional arrays."
+          },
+          {
+            "id": "dl2",
+            "title": "Pandas DataFrames",
+            "type": "video",
+            "duration": "25:00",
+            "content": "Pandas provides high-performance, easy-to-use data structures. DataFrames are the heart of data manipulation in Python."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Mobile App Development",
+    "description": "Build iOS and Android apps with React Native",
+    "instructor": "Mike Johnson",
+    "price": 44.99,
+    "category": "Mobile Development",
+    "rating": 4.6,
+    "students": 2100,
+    "duration": "35 hours",
+    "level": "Intermediate",
+    "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=225&fit=crop",
+    "modules": [
+      {
+        "id": "ml1",
+        "title": "React Native Basics",
+        "lessons": [
+          {
+            "id": "ll1",
+            "title": "What is React Native?",
+            "type": "video",
+            "duration": "10:00",
+            "content": "React Native lets you build mobile apps using only JavaScript. It uses the same design as React."
+          }
+        ]
+      }
+    ]
+  }
+]

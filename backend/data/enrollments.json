@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1770398128647",
+    "userId": "1770398115201",
+    "userName": "madhan kumar",
+    "courseId": "2",
+    "courseTitle": "Data Science Masterclass",
+    "coursePrice": 59.99,
+    "enrolledAt": "2026-02-06T17:15:28.647Z",
+    "progress": 0,
+    "completed": false,
+    "lastAccessed": "2026-02-06T17:15:28.647Z"
+  },
+  {
+    "id": "1770401769869",
+    "userId": "1770401755014",
+    "userName": "madhan kumar",
+    "courseId": "2",
+    "courseTitle": "Data Science Masterclass",
+    "coursePrice": 59.99,
+    "enrolledAt": "2026-02-06T18:16:09.869Z",
+    "progress": 0,
+    "completed": false,
+    "lastAccessed": "2026-02-06T18:16:09.869Z"
+  },
+  {
+    "id": "1770402742951",
+    "userId": "1770402727521",
+    "userName": "madhan kumar",
+    "courseId": "2",
+    "courseTitle": "Data Science Masterclass",
+    "coursePrice": 59.99,
+    "enrolledAt": "2026-02-06T18:32:22.952Z",
+    "progress": 0,
+    "completed": false,
+    "lastAccessed": "2026-02-06T18:32:22.952Z"
+  }
+]
